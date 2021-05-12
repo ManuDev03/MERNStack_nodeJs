@@ -3,6 +3,8 @@ const app = express()
 const port = process.env.port || 3000
 require('./db/mongoose')
 
+// init MiddleWare
+app.use(express.json({ extended: false }))
 
 app.use('/api/users' ,require('./routes/api/users'))
 app.use('/api/profile' ,require('./routes/api/profile'))
