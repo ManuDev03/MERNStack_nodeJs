@@ -1,5 +1,5 @@
 const express = require('express')
-const User = require('../../../models/user')
+const User = require('../../models/user')
 const router = express.Router()
 
 
@@ -12,7 +12,8 @@ router.post('/', async (req,res) => {
     }
     catch(err)
     {
-        res.status(401).send(err)
+        res.status(500).send(err)
+        console.error(err.message)
     }
 })
 module.exports = router
